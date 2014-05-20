@@ -1,0 +1,15 @@
+#! /bin/bash
+
+while [ 1 ]
+do
+    if [ `cat ./MidiMessagesFinished.mlce` == 1 ]
+    then
+        clear
+        make Editor
+        ./Editor
+        echo -n 0 > ./MidiMessagesFinished.mlce
+    fi
+
+	sleep 0.25
+done
+
